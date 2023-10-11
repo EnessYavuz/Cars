@@ -1,0 +1,16 @@
+resim için
+
+ https://unsplash.com/s/photos/car
+
+
+icon için
+
+https://fontawesome.com/
+
+
+
+
+css -reset css
+
+internet tarayıcılarının bazı özelliklerini sıfırlamak için
+

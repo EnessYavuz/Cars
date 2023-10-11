@@ -1,0 +1,993 @@
+/*GENERAL SETTINGS-----------------------------------------------------------------*/
+
+/*css dosyasında fontu import etme*/
+@font-face {
+  font-family: "Raleway";
+  src: url(../fonts/Raleway-Regular.ttf);
+}
+
+body {
+  background-color: white;
+  color: #3f3f3f;
+  font: 14px / 28px arial;
+  font-family: "Raleway";
+}
+
+/*boyut 52px yazılar arasındaki mesafe 4px olarak değiştirildi*/
+
+h1 {
+  font-size: 52px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+/* display: inline-block;  yazıya göre arka plan kapsıyor*/
+
+/*yüksekliği 60 px yapıp line-heaght 60px yapması ile ortalamış olduk*/
+/*line-height: normal; yazılar arasındaki üst ve alt boşlukları ayarlıyor*/
+
+.sectionHeader {
+  background: #2f0fcd;
+  border-bottom: 6px solid #000;
+  height: 60px;
+  color: #fff;
+  display: inline-block;
+  line-height: 60px;
+  font-size: 24px;
+  padding: 5px 40px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.sectionArea {
+  padding: 80px 0px;
+}
+
+h3 {
+  font-size: 16px;
+  color: #500d16;
+  transition: all 0.3s ease;
+}
+
+/*GRID SETTINGS-------------------------------------------------------------------*/
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.featuresBody .container {
+  justify-content: space-between;
+}
+
+/* flex-grow: 1; sütünlarının hepsinin genişliği eşit olsun*/
+
+.col3 {
+  flex-grow: 1;
+  width: 33.33%;
+}
+
+.engineBody .container {
+  justify-content: space-between;
+}
+
+.col2 {
+  flex-grow: 1;
+  width: 50%;
+  padding: 20px;
+}
+
+/*HOME SETTINGS------------------------------------------------------------------*/
+
+/*margin-right:auto derken menü clasını mümkün olduğunca sağa kaydırdı*/
+
+header .logo {
+  margin-right: auto;
+}
+
+/*logoyu bpuyutunu ayarladık*/
+header .logo img {
+  display: block;
+  height: 70px;
+}
+
+/* float left diyince yan yana ve birleşik hale geldi*/
+
+.menu li {
+  float: left;
+}
+
+/*bieleşik olanları yukarudan ve aşağıdan 27px sağdan ve soldan 17px boşluk verdik*/
+/* yukardan ve aşağıdan veril miş olan boşluklar çalışmadı*/
+/*o yüzden display blok ile çalıştırdık*/
+/*text-decoration: none; alt çizgiyi kaldırır*/
+/*letter-spacing: 2px; harfler arası boşluk menüde daha güzel görünüyor*/
+/*transition:all 0.3s ease; t,m özellikler 0.3s de değişsin değişen özelliklerin ismi ease olsun*/
+
+.menu li a {
+  padding: 27px 17px;
+  display: block;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+/*fare menünün üzerine gelice çalışacak*/
+
+.menu li:hover a {
+  background: #500d16;
+  color: #fff;
+}
+
+/* background: url(../img/carHomeMain.jpg) center center no-repeat;*/
+/*üsteki kodun açıklaması arka planını  şu adresden al
+x eksenine ve y eksenine göre merkezden al görseli tam ortadan al*/
+/*background-size:cover; resimi alana sığdır*/
+
+#mainSlider {
+  height: 500px;
+  background: url(../img/carHomeMain.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+/* width: 100%; slider classı ekranda genişliğin %100 kapsasın*/
+
+.slider {
+  width: 100%;
+}
+
+/* height: 500px; bu kadar yüksek verilmesinin sebebi yukardaki alanı kapsanası için*/
+/*background: rgba(0,0,0,5); ekranın karamasını sağlıyor opazitesi 5 artırısan daha çok kararır*/
+
+#mainCaption {
+  height: 500px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/*display: flex; bunu yazınca yazılar yanyana geldi*/
+/*flex-direction: column; sütün şeklinde olsun*/
+/*sütün şeklinde olsun deyince alt alta geldi*/
+/*align-items: center; bunu deyince yazılar x ekseninde orta konuma gittler*/
+/*justify-content: center; bu diyince yaazılar y ekseninde orta konuma giddiler*/
+/* width: 100%;
+    color: #fff;
+bulunduğu konumun %100 kaplıyor ve rengi beyaz*/
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #fff;
+}
+
+.featuresTop {
+  text-align: center;
+}
+
+.item {
+  padding: 10px 17px;
+}
+
+/*CSS'de "position:relative" özelliği, normal konumuna göre konumlandırılmıştır.
+Relative olarak konumlandırılmış bir etiketin top, bottom, left ve right özelliklerinin ayarlanması,
+normal konumundan uzağa ayarlanmasına neden olacaktır.*/
+
+/*overflow: hidden;  taşamaları sakla*/
+/*width: 100%; içerisinde bulunduğu divin 100% kapsa*/
+/*display: inline-block;  bulunduğu boyuta göre yer kapla*/
+/*vertical-align css'de dikey ortalama yapmak için kullanılan en yaygın yöntemlerden biri*/
+
+.zoom {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+
+/*bir üstündekine  display: inline-block; bir altındakine display: block; dememizin sebebi
+bulunduğu alanı tamamen kaplasın*/
+.zoom img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.item .itemText {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #550d16;
+}
+
+.item:hover .zoom img {
+  transform: scale(1.26);
+}
+
+.item:hover h3 {
+  color: #fff;
+}
+
+.item:hover .itemText {
+  background: #500d16;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btnDetails {
+  color: #500d16;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: 1px solid #500d16;
+  transition: all 0.3s ease;
+}
+
+/*.item:hover .btnDetails ------item üzerine gelindiğinde  btnDetails özelliği şunlar olsun*/
+
+.item:hover .btnDetails {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.itemText p {
+  margin: 20px 0px;
+}
+
+/*açıklayayım
+ background: linear-gradient(
+        rgba(0,0,0,.7), üs
+        rgba(0,0,0,.7)  
+    ),url('../img/parallax.jpg');
+
+    alta taraf ve üst tarafın opasitesinin renginin kapalılıgını belirliyor
+    url den arka plana resim koyuyon
+*/
+
+/* background-attachment: fixed;
+sayfa hareket etse bile resim sabit kalıyor
+
+background-size: cover;
+resimi alana sığdırıyor
+
+background-position: center;
+resmi alana ortalıyor
+
+text-align: center;
+yazıyı ortalıyor
+*/
+
+#parallax {
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      /*üstaraf*/ rgba(0, 0, 0, 0.7) /*alt taraf*/
+    ),
+    url("../img/parallax.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+#parallax p {
+  color: #fff;
+}
+
+.engineTop {
+  text-align: center;
+}
+
+/*içerisinde bulundu clasın 100% genişliğini alıyor
+yani önceden %50 alınmış clası tamamen kaplıyor*/
+
+.engineContainer {
+  position: relative;
+  width: 100%;
+}
+
+.imageOver {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*position: absolute;
+     yani kendisini yapsayan classa göre ,relative ne göre 
+     buna ne t değerler verile bilir*/
+
+.engineOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(80, 13, 22, 0.6);
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: 0.4s ease;
+}
+
+.engineContainer:hover .engineOverlay {
+  width: 100%;
+}
+
+/* önemli noktaları var
+1-)white-space: nowrap;
+overlay olduğundan yazılar düz olsun
+2-)position:absolute ;
+konumu ayarlamak için absolute yaptık
+50% 50% yapmamıza ragmen sadece ilk harf  tam ortada metni ortalamak içi ise
+
+3-)transform: translate(-50%, -50%);
+yazının bulunduğu kutunun yüzde elli sol yüzde elli üst tarafa çıkarak
+kutunun merkezini bulunduğu konumun merkezine göre ayarlıyor
+böylece resim ortalanıyor
+*/
+
+.engineText {
+  white-space: nowrap;
+  color: #fff;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.engineOverlay2 {
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  background-color: rgba(80, 13, 22, 0.6);
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: 0.4s ease;
+}
+
+.engineContainer:hover .engineOverlay2 {
+  width: 100%;
+  left: 0;
+}
+
+footer {
+  background-color: #500d16;
+  text-align: center;
+  justify-content: center;
+  padding: 60px 0px;
+}
+
+.footerItem {
+  padding: 20px;
+}
+
+footer h3 {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+}
+
+footer .fa-brands {
+  font-size: 30px;
+  color: #95a5a6;
+  line-height: 50px;
+  transition: 0.3s ease;
+}
+
+footer .fa-brands:hover {
+  color: #fff;
+}
+footer p {
+  color: #95a5a6;
+  line-height: 20px;
+  margin-top: 20px;
+}
+
+.footerLinks a {
+  text-decoration: none;
+  color: #95a5a6;
+  letter-spacing: 2px;
+  font-size: 20px;
+  transition: 0.3s ease;
+}
+.footerLinks a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footerLinks li {
+  padding: 5px;
+}
+
+.socialLinks li {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+/* background: url(../img/carHomeMain.jpg) center center no-repeat;*/
+/*üsteki kodun açıklaması arka planını  şu adresden al
+x eksenine ve y eksenine göre merkezden al görseli tam ortadan al*/
+/*background-size:cover; resimi alana sığdır*/
+
+#carsSlider {
+  height: 250px;
+  background: url(../img/car7.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+/* width: 100%; slider classı ekranda genişliğin %100 kapsasın*/
+
+/* height: 500px; bu kadar yüksek verilmesinin sebebi yukardaki alanı kapsanası için*/
+/*background: rgba(0,0,0,5); ekranın karamasını sağlıyor opazitesi 5 artırısan daha çok kararır*/
+
+#carsCaption {
+  height: 250px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#inspect {
+  background-color: #e9e9e9;
+}
+
+.inspectTop {
+  text-align: center;
+}
+
+/*display: flex;     burda şöyle düşüne biliriz
+flex yapısıyla yanyana col2 içerisinde resim yazı resim yazı
+gi yanyana koyabiliriz*/
+
+.inspectBody .col2 {
+  display: flex;
+}
+
+/*burada %40 alınmasının sebebi resim %40 text %60 olacak şekilde*/
+
+/*sadece genişliği yapıp bakarsan hatalı görünüm görürsün text bitir öyle bak*/
+
+.inspectImage {
+  width: 40%;
+}
+
+.inspectImage img {
+  width: 100%;
+  height: auto;
+}
+
+.inspectText {
+  width: 60%;
+  padding-left: 10px;
+  height: 100%;
+}
+
+.date {
+  color: #333;
+  font-size: 12px;
+  font-style: italic;
+}
+
+h4 {
+  color: #550d16;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* sağa yaslama için float:right */
+
+.inspectText a {
+  float: right;
+  text-decoration: none;
+  color: #500d16;
+  font-weight: bolder;
+}
+
+.inspectText a:hover {
+  text-decoration: underline;
+}
+
+.projectXTop {
+  text-align: center;
+}
+
+#projectX .containerFluid {
+  height: 500px;
+  background: url(../img/car6.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.captionPX {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 500px;
+  display: flex;
+}
+
+.projectXInfo {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: 5%;
+  padding-right: 5%;
+  transform: translate(-50%, -50%);
+}
+.projectXTitle {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.projectXBTN {
+  background-color: #550d16;
+  color: #fff;
+  padding: 20px 40px;
+  cursor: pointer;
+  border: none;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.projectXBTN:hover {
+  font-weight: bold;
+  background-color: #fff;
+  color: #550d16;
+}
+
+.projectXText {
+  color: #e9e9e9;
+}
+
+.projectXHighlight {
+  background-color: #500d16;
+  display: inline-block;
+  color: #e9e9e9;
+  padding: 30px;
+}
+.containerFluid .col2 {
+  padding: 0px;
+}
+
+/* ABOUT SETTINGS  */
+
+#aboutSlider {
+  height: 250px;
+  background: url(../img/aboutSlider.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+/* width: 100%; slider classı ekranda genişliğin %100 kapsasın*/
+
+/* height: 500px; bu kadar yüksek verilmesinin sebebi yukardaki alanı kapsanası için*/
+/*background: rgba(0,0,0,5); ekranın karamasını sağlıyor opazitesi 5 artırısan daha çok kararır*/
+
+#aboutCaption {
+  height: 250px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#ourHistory {
+  background-color: #e9e9e9;
+}
+
+.ourHistoryTop {
+  text-align: center;
+}
+
+.ourHistoryBody .containerFluid {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ourHistoryBody .col2 {
+  display: flex;
+}
+
+/*flex: 1; sıraile alakası yok kutuya bayutlandırma ile ilgili burada 1 birim uzunluk verildi*/
+.ourHistoryDate {
+  flex: 1;
+  text-align: center;
+  background-color: #500d16;
+  color: #fff;
+}
+
+.ourHistoryDate p {
+  font-size: 30px;
+  letter-spacing: 2px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*flex: 2; sıraile alakası yok kutuya bayutlandırma ile ilgili burada 2 birim uzunluk verildi*/
+
+.ourHistoryImage {
+  flex: 2;
+}
+
+/*bunu yazdıktana sonra görsel gidebilir kodların devamında gelecek texti yazınca gelecek
+mantığı şu col3 içerisinde 3 parça kutu tanımlandı tanımlanan kutulara flex yapıları ile
+boyutlandırmalar yapıldı boyulandırmalar tam olmada görsel gelmedi*/
+.ourHistoryImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.ourHistoryText {
+  flex: 3;
+  margin-left: 10px;
+}
+
+.ourHistoryText p {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.teamTop {
+  text-align: center;
+}
+
+.teamBody .containerFluid {
+  display: flex;
+  width: 100%;
+}
+
+.teamMember {
+  position: relative;
+  width: 100%;
+}
+
+/*block dememizin sebebi yükseklik ve genişlik verilmesi için*/
+.teamMemberImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/*en önemli not kendisini kapsayan tagın relative olmadan kendisine 
+absolute dememiz bir işe yaramaz bu sayede arda plan resim olup resimin öenüne
+ekleme çıkarma yapılabilmektedir */
+
+.teamMemberOverlay {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  background-color: #500d16;
+  transition: 0.5s ease;
+}
+
+.teamMember:hover .teamMemberOverlay {
+  opacity: 0;
+}
+
+/*burada yazının yukarıdan gelmesi
+textti kutuyu konumlandırmyı anlatılacak*/
+.teamMember:hover .teamMemberInfo {
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.teamTitle {
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.teamMemberInfo {
+  color: #fff;
+  background-color: rgba(80, 13, 22, 0.7);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s ease;
+  padding: 20px;
+  text-align: center;
+}
+
+.memberSocialLinks {
+  text-align: center;
+}
+
+.memberSocialLinks li {
+  display: inline;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.memberSocialLinks .fa-brands {
+  color: #fff;
+}
+
+/*CONTACT SETTINGS*/
+
+
+#contactSlider {
+  height: 250px;
+  background: url(../img/phone23.jpg) center center no-repeat;
+  background-size: cover;
+  
+
+}
+
+/* width: 100%; slider classı ekranda genişliğin %100 kapsasın*/
+
+/* height: 500px; bu kadar yüksek verilmesinin sebebi yukardaki alanı kapsanası için*/
+/*background: rgba(0,0,0,5); ekranın karamasını sağlıyor opazitesi 5 artırısan daha çok kararır*/
+
+#contactCaption {
+  height: 250px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#gallery {
+  background-color: #e9e9e9;
+}
+
+.galleryTop {
+  text-align: center;
+}
+
+.gallerySlider {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+.gallerySliderItem {
+  width: 300%;
+  position: relative;
+  left: 0;
+  animation: slideAnimation  30s infinite; 
+}
+
+.gallerySliderItem img {
+  width: 33.33%;
+  float: left;
+  height: auto;
+
+}
+
+
+/*15 dersi tekrar dinle arin*/
+@keyframes slideAnimation {
+  0% {left: 0;}
+  25% {left: -100%;}
+  50% {left: -200%;}
+  75% {left: -100;}
+  100% {left: 0;}
+  
+}
+
+
+.contactTop {
+  text-align: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contactForm {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.formItem{
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.fromShape {
+  color: #fff;
+  float: left;
+  background-color: #500d16;
+  padding: 8px;
+  width: 8%;
+  text-align: center;
+
+}
+
+.fromField {
+  color: #fff;
+  background-color: #500d16;
+  border: none;
+  padding: 15.5px;
+  width: 92%;
+  display: block;
+  font-size: 14px;
+}
+
+.formBtn {
+  display: block;
+  border: none;
+  background-color: #500d16;
+  color: #fff;
+  padding: 12px 25px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.formBtn:hover {
+  background: #841916;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width:960px){
+    .caption h1 {
+      color: red;
+      font-size: 32px;
+      letter-spacing: 2px;
+    }
+
+    footer .fa-brands {
+      font-size: 24px;
+      color:yellow
+    }
+    footer h3 {
+      font-size: 14px;
+    }
+
+    .inspectBody .container{
+      flex-direction: column;
+      color: blueviolet;
+    }
+    .inspectBody .container .col2 {
+      width: 100%;
+    }
+
+    .ourHistoryBody .col2 {
+      flex-direction: column;
+      color: chocolate;
+      width: 100%;
+      margin: 0px 10px;}
+}
+
+
+@media screen and (max-width:720px){
+  header .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  header .logo {
+    margin: 0 auto;
+  }
+  
+  .caption h1 {
+    color: burlywood;
+    font-size: 27px;
+    letter-spacing: 2px;
+  }
+
+  .featuresBody .container {
+    flex-direction: column;
+
+
+  }
+
+  .featuresBody .container .col3 {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .engineBody .container{
+    flex-direction: column;
+  }
+
+   .engineBody .container .col2{
+    
+    width: 80%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  } 
+
+  footer .container {
+    flex-direction: column;
+  }
+  footer .container .col3 {
+   width: 100%;
+  }
+
+  .sectionHeader{
+    font-size: 20px;
+  }
+
+  .inspectBody .container .col2 {
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+
+  .teamMemberInfo {
+    font-size: 10px;
+    padding: 5px;
+  }
+
+  .teamTitle {
+    font-size: 14px;
+    color: burlywood;
+
+  }
+  footer .fa-brands {
+    font-size: 24px;
+    color:#000;
+  }
+
+  .teamMemberInfo  h5{
+    font-size: 10px;
+  }
+  .memberSocialLinks{
+    font-size: small;
+  }
+
+}
+
+@media screen and (max-width:540px){
+  .caption h1 {
+    color: chartreuse;
+    font-size: 23px;
+    letter-spacing: 1px;
+  }
+  .featuresBody .container .col3 {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .engineBody .container .col2{
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
